@@ -1,5 +1,4 @@
-# bytecode_pipeline
-Source code compilation pipeline for use in pre-proessing of code clone datasets to test performance on new input type
+# Source code compilation pipeline for use in pre-proessing of code clone datasets to test performance on new input type
 
 Along with this repository, STUBBER, Toma and SourcererCC should be cloned using the following links:
 

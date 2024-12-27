@@ -34,46 +34,71 @@ This readme file lays out how to execute the scripts which comprise the compilat
 ## Run SourcererCC
 
 -Edit config.ini in the file-level tokenizer folder
+
     -supply a list of paths to .zip folder to FILE_projects_list 
+
         -should be zip of a given CSV's opcodes 
+
     -Place the four output files in a separate "outputs" folder
+
     -Configure Language-specific parameters
+
 
 -Run tokenizer in WSL with "python3 tokenizer.py"
 
+
 -Make a copy of file stats with 
+
     -cat outputs/files_tokens/* > blocks.file
+
     -cp blocks.file ../../clone-detector/input/dataset/blocks.file
+
 
 -Configure min/max tokens in sourcerer-cc.properties of clone-detector folder
 
 -Configure threshold in runnodes.sh
+
     -threshold="${3:-8}" controllts threshold and "8" means 80%, "7" 70%, etc.
 
+
 -Run sourcererCC:
+
     -"python3 controller.py"
+
     -if log_init.err indicates build.xml failed to build, change C:\876\newSourcererCC\SourcererCC\clone-detector\build.xml:31 to 1.8 instead of 1.7
+
     =if log_execute1.err indicates it can't find python, edit C:\876\newSourcererCC\SourcererCC\clone-detector\execute.sh:11 to be python3
 
+
 -Merge results from nodes
+
     -cat clone-detector/NODE_*/output*/query_* > results.pairs
 
 
 ## Run Toma
 
 -Modify tokenizer script
+
     -Configure "inputcsv" variable to be path to CSVs
+
     -Modify "pairs = pd.read_csv(inputcsv, header=None)" in main to include a ", usecols=[0, 1]" option
+
     -Modify "inputpath" variable in "get_sim" function to point to opcode folder instead of dataset folder
+
     -Modify "sourcefile1" and "sourcefile2" in "get_sim" function to use ".opcodes" instead of ".java"
+
     -Remove "logfile.writelines(log)" lines which may cause issues
+
     -Remove printing of similarity scores from "get_sim" function for speed's sake
+
     -Include this parser function alongside the similarly named ones:
+
         def getCodeBlock_bytecode(file_path):  #Z: this will return token sequence from bytecode opcodes. No use of javalang tokenizer
             block = []
             with open(file_path, 'r') as temp_file:
                 block = [line.strip() for line in temp_file.readlines()]
             return block
+
     -Modify reference to "getCodeBlock_type" function in "runner" function to point to newly created "getCodeBlock_bytecode" function instead 
 
 -Run tokenizer script as above for each CSV to get corresponding CSV of similairty scores for each
@@ -84,7 +109,9 @@ This readme file lays out how to execute the scripts which comprise the compilat
 ## Evaluate SorcererCC
 
 -Convert from Sourcerer's fileID results to funcID results (same as used in CSVs) using files-stats-0.stats mapping file from Sourcerer's tokenizer's output folder
+
     -python3 ./XXX-sourcerer_results_to_func_ID_list.py -o converted_results_T2_t7.list -r ./newSourcererCC/SourcererCC/T2_t7_results.pairs -m ./newSourcererCC/SourcererCC/tokenizers/file-level/T2_outputs/files_stats/files-stats-0.stats
 
 -Compute results by comparing funcID results list to ground truth CSV for that clone type
+
     -python3 XXX-compute_results.py -c Toma/dataset/type-2.csv -r ./newSourcererCC/SourcererCC/converted_results_T2_t7.list

@@ -1,3 +1,6 @@
+# 2024 Zackary Savoie
+# Script to print out private lines in java source 
+
 import os 
 
 java_path = "Toma/dataset/id2sourcecode/"

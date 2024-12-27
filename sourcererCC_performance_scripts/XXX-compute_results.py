@@ -1,9 +1,9 @@
+# 2024 Zackary Savoie
 # Compute precision, recall and F1 scores given the ground truth CSV for a given clone type and the output of sorcererCC (with fileIDs swapped for funcIDs using provided script)
 
 import argparse
 import os.path
 from tqdm import tqdm
-import shutil
 
 # Arg parsing
 csv_path = None

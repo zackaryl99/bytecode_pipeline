@@ -1,6 +1,8 @@
+# 2024 Zackary Savoie
 # go through folder of .class files, run javap -c on them, extract opcodes and spit out files containing one opcode per line
 # also go through CSVs to remove any invalid functions (0 opcodes, or failed to disassemble completely)
 
+# Sample run command:
 # python .\4-disassemble_class_extract_opcodes.py -i .\class_outputs_2\  -o .\extracted_opcodes_2 -c ./Toma\dataset\type-1.csv,./Toma\dataset\type-2.csv,./Toma\dataset\type-3.csv,./Toma\dataset\type-4.csv,./Toma\dataset\type-5.csv,./Toma\dataset\clones.csv,./Toma\dataset\nonclone.csv
 
 import os

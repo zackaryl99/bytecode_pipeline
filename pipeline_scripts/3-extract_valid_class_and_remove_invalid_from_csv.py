@@ -1,6 +1,8 @@
+# 2024 Zackary Savoie
 # Extract .class from zip file if only one present to subfolder, keeping track of function_ids which fail this test
 # Use list of invalid function_ids to update the csvs for clones, nonclones, typeX files
 
+# Sample run command:
 # python .\3-extract_valid_class_and_remove_invalid_from_csv.py -o class_outputs_2 -j .\Stubber\StubFiles\ -c .\Toma\dataset\clone.csv,.\Toma\dataset\nonclone.csv,.\Toma\dataset\type-1.csv,.\Toma\dataset\type-2.csv,.\Toma\dataset\type-3.csv,.\Toma\dataset\type-4.csv,.\Toma\dataset\type-5.csv
 
 import zipfile

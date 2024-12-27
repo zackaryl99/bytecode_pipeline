@@ -1,3 +1,6 @@
+# 2024 Zackary Savoie
+# This script is used to compute the average number of unique and total tokens for a set of files tokenized by SourcererCC's file-level tokenizer
+
 base = "/mnt/c/876/newSourcererCC/SourcererCC/tokenizers/file-level/linecounting/"
 
 # average total

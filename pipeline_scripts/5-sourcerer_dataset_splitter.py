@@ -1,3 +1,4 @@
+# 2024 Zackary Savoie
 # Copy all functions present in a given CSV list to a specified output folder for the purpose of dividing the inputs for running sorcererCC
 # Can also be used to copy .java if the extension is changed (useful for testing tools on the same reduced datasets with uncompilable files removed)
 

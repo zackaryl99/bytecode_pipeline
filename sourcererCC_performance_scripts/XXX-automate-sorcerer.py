@@ -1,4 +1,8 @@
-# Run from SourcererCC folder!
+# 2024 Zackary Savoie
+# Script is used to automate running of SourcererCC's clone detector and calculation of recall, precision, and F1.
+# You must manually tokenize the input datasets according to the procedure in readme however, and prefix the tokenizer's output folders so that the "runs" variable makes sense.
+
+# Also run this from SourcererCC git folder!
 
 # steps:
 # copy correct blocks.file to clone detector input directory

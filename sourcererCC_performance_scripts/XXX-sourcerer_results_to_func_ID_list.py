@@ -1,3 +1,4 @@
+# 2024 Zackary Savoie
 # Map the file names and numbers in files-stats-#.stats output of SourcererCC to funcID number used in CSVs
 
 import argparse

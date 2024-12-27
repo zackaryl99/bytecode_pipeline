@@ -1,9 +1,11 @@
+# 2024 Zackary Savoie
+# Script to print out the number of .class files in the <func_ID>/ folder of each .jar file in given directory
+
 import zipfile
 import os
 import re
 
 def show_jar_classes(directory):
-    """Prints out the number of .class files in the <func_ID>/ folder of each .jar file in given directory"""
     dir_list = os.listdir(directory)
     counts = {}
     for file in dir_list:

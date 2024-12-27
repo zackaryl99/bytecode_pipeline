@@ -1,6 +1,8 @@
+# 2024 Zackary Savoie
 # Parse "errorFiles" output of STUBBER to get list of IDs which failed to compile
 # Parse dataset CSVs to remove these IDs
 
+#S ample run command:
 # python .\2-RemoveFAiledSTUBBERFiles.py -e .\Stubber\errorFiles -c Toma\dataset\type-1.csv,Toma\dataset\type-2.csv,Toma\dataset\type-3.csv,Toma\dataset\type-4.csv,Toma\dataset\type-5.csv,Toma\dataset\clone.csv,Toma\dataset\nonclone.csv
 
 import re

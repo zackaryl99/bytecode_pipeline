@@ -8,7 +8,7 @@ https://github.com/Mondego/SourcererCC
 
 This readme file lays out how to execute the scripts which comprise the compilation pipeline, how to configure and use Toma and SourcererCC and how to evaluate sourcererCC's results.
 
-
+For a copy of the paper written for this project, please contact me using 19zs51@queensu.ca
 
 ## Prepare Data (pipeline)
 
